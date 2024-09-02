@@ -1,12 +1,11 @@
-class HomePageTable {
-    visit() {
-      cy.visit('https://demoqa.com/');
-    }
-  
-    navigateToWidgets() {
-      cy.contains('Widgets').click();
-    }
+class HomePageProgress {
+  visit() {
+    cy.visit('https://demoqa.com/');
   }
-  
-  export default new HomePageTable();
-  
+
+  goToWidgets() {
+    cy.get('.category-cards > :nth-child(4)').click(); // Altere esse seletor conforme necessário
+  }
+}
+
+export default HomePageProgress;

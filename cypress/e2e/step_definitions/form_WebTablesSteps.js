@@ -1,6 +1,7 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import WebTablesPage from '../../support/page_objects/WebTablesPage';
 import HomePageTable from '../../support/page_objects/HomePageTable';
+
 import { faker } from '@faker-js/faker';
 
 // Função para gerar dados dinâmicos usando Faker
