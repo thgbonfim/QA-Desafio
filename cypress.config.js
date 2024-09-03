@@ -6,10 +6,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
       // implement node event listeners here
-     
     },
-    specPattern:  "cypress/e2e/step_definitions"
-    
+    specPattern: "cypress/e2e/step_definitions",
+    defaultCommandTimeout: 10000, // Define o timeout padrão para 10 segundos
   },
-  
 });
