@@ -79,52 +79,24 @@ class WebTablesPage {
       this.submitForm();
       cy.wait(500); // Espera meio segundo após cada inserção
     });
-  }
-  deleteRecords(limit = 12) {
-    const deleteNext = () => {
-      cy.get(this.selectors.rows).then(($rows) => {
-        if ($rows.length > 0 && limit > 0) {
-          // Pega o primeiro registro da tabela e clica no botão de deletar
-          cy.wrap($rows).first().scrollIntoView().within(() => {
-            cy.get(this.selectors.deleteButton).should('be.visible').click();
-          });
-  
-          cy.wait(1000); // Aguarda a tabela atualizar
-  
-          // Reduz o limite de exclusões restantes
-          limit -= 1;
-  
-          // Reconsulta a tabela após a exclusão e tenta excluir o próximo registro
-          deleteNext();
-        } else {
-          // Após tentar excluir todos os registros desejados, valida o número de registros restantes
-          cy.get(this.selectors.rows).then(($finalRows) => {
-            cy.wrap($finalRows).should('have.length.lessThan', limit + 1); // Verifica que a quantidade de registros é menor que o limite
-  
-            // Log para indicar que a operação foi concluída
-            if ($finalRows.length > 0) {
-              cy.log(`A tabela ainda possui ${$finalRows.length} registros, mas deveria ter menos que ${limit + 1}.`);
-            } else {
-              cy.log('Todos os registros foram excluídos com sucesso.');
-            }
-          });
-        }
-      });
-    };
-  
-    // Inicia a exclusão de registros
-    deleteNext();
-  }
-  
-  
-  
-  
-  
+  } 
+  deleteRecords(){
+    cy.get('#delete-record-1 > svg').click()
+    cy.get('#delete-record-2 > svg').click()
+    cy.get('#delete-record-3 > svg').click()
+    cy.get('#delete-record-4 > svg').click()
+    cy.get('#delete-record-5 > svg').click()
+    cy.get('#delete-record-6 > svg').click()
+    cy.get('#delete-record-7 > svg').click()
+    cy.get('#delete-record-8 > svg').click()
+    cy.get('#delete-record-9 > svg').click()
+    cy.get('#delete-record-10 > svg').click()
+    cy.get('#delete-record-11 > svg').click()
+    cy.get('#delete-record-12 > svg').click()
 
-  
+     }
   
 }
   
 export default new WebTablesPage();
-
 

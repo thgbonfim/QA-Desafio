@@ -7,3 +7,5 @@ Feature: Book Store API
     When the user lists available books
     And the user rents two books
     Then the user's rented books should be validated
+
+    

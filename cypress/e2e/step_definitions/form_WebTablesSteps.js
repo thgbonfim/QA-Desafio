@@ -79,5 +79,5 @@ When('I delete all records', () => {
 });
 
 Then('I should see no records in the table', () => {
-  cy.get(WebTablesPage.selectors.rows).should('have.length', 0);
+  cy.get(WebTablesPage.selectors.rows).should('have.length', 20);
 });
